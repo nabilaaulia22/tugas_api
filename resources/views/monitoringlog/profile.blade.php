@@ -1,6 +1,6 @@
 @extends('template.index')
 
-@section('title', ' MY PROFILE')
+@section('title', '')
 
 @section('content')
 

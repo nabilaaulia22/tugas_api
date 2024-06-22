@@ -57,31 +57,13 @@
                     </a>
                 </li>
 
-                <li class="{{ Request::is('data down', 'data up') ? 'nav-item menu-open' : 'nav-item' }}">
-                    <a href="#" class= "nav-link">
-                        <i class="nav-icon fas fa-exchange-alt"></i>
-                        <p>
-                            Log Gangguan
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-
-                    <ul class="nav nav-treeview">
-                        {{-- <li class="nav-item">
-                            <a href="{{ route('up') }}"
-                                class="{{ Request::is('menuup') ? 'nav-link active' : 'nav-link' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Data Up</p>
-                            </a>
-                        </li> --}}
-                        <li class="nav-item">
+                <li class="nav-item menu-open">
                             <a href="{{ route('down') }}"
                                 class="{{ Request::is('menudown') ? 'nav-link active' : 'nav-link' }}">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-down nav-icon"></i>
                                 <p>Data Down</p>
                             </a>
                         </li>
-                    </ul>
                 </li>
 
                 <li class="nav-item menu-open">

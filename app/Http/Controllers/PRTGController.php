@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dataup;
 use App\Models\Down;
+use DateTime;
 use GuzzleHttp\Client;
 // use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\Request;
@@ -15,7 +16,9 @@ class PRTGController extends Controller
         $host = $request->get('host');
         $sitename = $request->get('sitename');
         $event = $request->get('event');
-        $timestamp = $request->get('timestamp');
+        $timeevent = $request->get('timestamp');
+        $date = DateTime::createFromFormat('d/m/Y H:i:s', $timeevent);
+        $timestamp = $date->format('Y-m-d H:i:s');
 
         if($event=='Down'){
             $downData = [
@@ -38,7 +41,7 @@ class PRTGController extends Controller
                     'down_id'=>$down_id,
                     'ip_address'=>$host,
                     'unit_name'=>$sitename,
-                    'up_time'=>date('Y-m-d H:i:s')
+                    'up_time'=>$timestamp
                 ];
                 $modelUP = Dataup::create($dataUP);
                 if($modelUP){
@@ -56,6 +59,7 @@ class PRTGController extends Controller
             'down_time'=>$timestamp
         ];
         Log::info('inputPRTG', $downData);
+        Log::info('checkStatus', $response);
         echo json_encode($response);
     }
 }

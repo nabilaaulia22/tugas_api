@@ -14,19 +14,19 @@
                         <form action="{{ route('insertdata') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mt-3">
-                                <label for="exampleInputEmail1" class="form-label">ID UNIT</label>
-                                <input name ="id_unit" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="id_unit" class="form-label">ID UNIT</label>
+                                <input name="id_unit" type="text" class="form-control" id="id_unit" aria-describedby="emailHelp" required>
+                                <!-- Tambahkan required di sini -->
                             </div>
                             <div class="mt-3">
-                                <label for="exampleInputEmail1" class="form-label">IP UNIT</label>
-                                <input name ="ip_unit" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="ip_unit" class="form-label">IP UNIT</label>
+                                <input name="ip_unit" type="text" class="form-control" id="ip_unit" aria-describedby="emailHelp" required>
+                                <!-- Tambahkan required di sini -->
                             </div>
                             <div class="mt-3">
-                                <label for="exampleInputEmail1" class="form-label">UNIT NAME</label>
-                                <input name ="unit_name" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="unit_name" class="form-label">UNIT NAME</label>
+                                <input name="unit_name" type="text" class="form-control" id="unit_name" aria-describedby="emailHelp" required>
+                                <!-- Tambahkan required di sini -->
                             </div>
 
                             <div class="mt-4">

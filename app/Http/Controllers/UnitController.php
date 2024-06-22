@@ -27,6 +27,13 @@ class UnitController extends Controller
 
     public function insertdata(Request $request)
     {
+        // Validasi input
+        $request->validate([
+            'id_unit' => 'required',
+            'ip_unit' => 'required',
+            'unit_name' => 'required',
+        ]);
+
         // dd($request->all());
         Dataunit::create([
             'id_unit' => $request->id_unit,
@@ -49,7 +56,6 @@ class UnitController extends Controller
         $data = Dataunit::find($id);
         // dd($data);
         return view('monitoringlog.edit', compact('data'));
-
     }
 
     public function updatedata(Request $request, $id)
@@ -60,5 +66,3 @@ class UnitController extends Controller
         return redirect()->route('unitdata')->with('succes', 'Data berhasil di update');
     }
 }
-
-

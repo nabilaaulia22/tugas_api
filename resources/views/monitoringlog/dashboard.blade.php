@@ -1,5 +1,5 @@
 @extends('template.index')
-@section('title', 'DASHBOARD')
+@section('title', '')
 @section('content')
 
     <div class="row">
@@ -24,7 +24,7 @@
             <div class="small-box bg-warning">
                 <div class="inner">
                     <h3>{{ $jumlahRayon }}</h3>
-                    <p>Jumlah Link</p>
+                    <p>Jumlah Unit</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-map-marker-alt"></i>
@@ -140,10 +140,10 @@
             });
         }
 
-        // Panggil fungsi refreshTopDownData saat halaman dimuat
-        $(document).ready(function() {
-            refreshTopDownData();
-        });
+        // // Panggil fungsi refreshTopDownData saat halaman dimuat
+        // $(document).ready(function() {
+        //     refreshTopDownData();
+        // });
 
         // Panggil fungsi refreshTopDownData setiap awal bulan
         setInterval(function() {
